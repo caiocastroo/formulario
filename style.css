@@ -1,0 +1,461 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap');
+@font-face {
+    font-family: contato;
+    src:url(fontes/bubblegum-sans-regular.otf);
+    font-weight: normal;
+}
+
+/*Comentários*/ 
+
+*{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --cor1: rgb(255, 255, 255); /*cor do titulo*/
+    --cor2: #83e1ad; /*cor dos botoes*/
+    --cor3: #00000080; 
+    --cor4: #ff0000; 
+    
+    --titulo: "Reem Kufi Fun", sans-serif;
+}
+
+body{
+    background: var(--cor1);
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+}
+
+h1{
+    font-family: contato;
+    text-align: center;
+    color: #000000;
+    font-size: 3em;
+}
+
+.layout{
+    margin: 0 auto;
+}
+
+.btn_flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    background: darkcyan;
+    color: #000000;
+    font-size: 1.1em;
+    padding: 7px;
+    margin: 0px 5px 15px 5px;
+    border-radius: 10px;
+}
+.flex2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*______________________________________________________________________*/
+/*Explicação Média Query*/
+
+/*smartphone portrait* pé */ 
+header{
+    height: 60px;
+}
+
+.logo img{
+    padding: 5px 10px;
+}
+
+#check{
+    display: none;
+    
+}
+
+.label_menu{
+    font-size: 3em;
+    position: fixed;
+    margin-left: -50px;
+}
+
+nav ul{
+    list-style: none;
+    background: #000000;
+    height: 100vh;
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    right: -100%;
+}
+
+#check:checked ~ ul{
+    right: 0;
+}
+nav ul li{
+    padding: 20PX;
+    border-bottom: 1px solid #a9a9a9;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #a9a9a9;
+}
+
+/*BANNER*/
+.anime1, .anime2{
+    display: none;
+}
+/*FORMULARIO*/
+
+.form{
+    font-family:"Reem Kufi Fun", sans-serif;
+}
+.form p{
+    font-size: 1em;
+}
+#usuario, #endereco, #mensagem, #pedido, #sexo{
+    border: 1px solid #000000;
+    width: 350px;
+    margin: 15px 5px;
+    padding: 5px;
+}
+#sexo{
+    width: 280px;
+}
+legend{
+    font-size: 1.3em;
+}
+input, select{
+    height: 2em;
+    border: none;
+    margin: 5px;
+    padding: 2px;
+    background: #cdbaba;
+}
+textarea{
+    margin-top: 15px;
+    border: 1px solid black;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#filme{
+    height: 30vh;
+    margin-bottom: 15px;
+}
+#musica{
+    margin-bottom: 25px;
+}
+ /*Página Fotos*/
+ .fotos{
+    display: flex;
+    flex-direction: column;
+ }
+ .galeria{
+    width: 85vw;
+    list-style: none;
+    margin: 30px auto;
+}
+.galeria li span{
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    color: #cdbaba;
+}
+.galeria li{
+    justify-content: center;
+    margin: 10px;
+}
+.galeria img{
+    background: #a9a9a9;
+    padding: 5px;
+    width: 280px;
+    height: 200px;
+}
+.aumentar:hover{
+    transform: scale(1.3);
+
+}
+
+
+
+
+
+
+
+/*smartphone Landscape* deitado */
+
+
+@media (min-width: 576px){
+
+.layout{
+    max-width: 540px;   
+}
+/*BANNER*/
+.anime1, .anime2{
+    max-width: 100%;
+    height: auto;
+}
+.anime1{
+    display: inline ;
+}
+/*FORMULARIO*/
+#usuario, #endereco, #mensagem, #pedido, #sexo{
+    width: 500px;
+}
+/*Video*/
+#filme{
+    height: 78vh;
+}
+ /*Página Fotos*/
+.galeria{
+    width: 85vw;
+}
+.galeria{
+    text-align: center;
+}
+.galeria img{
+    width: 280px;
+    height: 210px;
+}
+.galeria span{
+display: none;
+}
+
+
+
+
+
+
+/*Tablet portrait* pé */
+
+@media (min-width: 768px){
+
+.layout{
+    max-width: 720px;
+}
+.anime1{
+    display: inline ;
+}
+.anime2{
+     display: none ;
+}
+/*FORMULARIO*/
+#usuario, #endereco, #mensagem, #pedido{
+    width: 700px;
+}
+
+ #usuario{
+    background: url(img/icontato.png) no-repeat 95% 95%;
+}
+#endereco{
+    background: url(img/iendereco.png) no-repeat 95% 95%;
+}
+#mensagem{
+    background: url(img/imensagem.png) no-repeat 95% 95%;
+}
+#pedido{
+    background: url(img/ipgto.png) no-repeat 95% 95%;
+}
+/*Video*/ 
+#filme{
+    height: 38vh;
+}
+}
+ /*Página Fotos*/
+
+ .fotos{
+    flex-direction: row;
+    justify-content: space-evenly;
+ }
+ .galeria{
+    width: 81vw;
+ }
+ .galeria li{
+    text-align: center;
+    float: left;
+ }}
+
+
+
+
+
+
+/*Tablet Landscape* deitado */
+@media (min-width: 992px){
+
+.layout{
+    max-width: 960px;
+}
+/*BANNER*/
+.banner{
+    height: 36dvh;
+}
+/*FORMULARIO*/
+#usuario, #endereco, #mensagem, #pedido{
+    width: 940px;
+}
+
+/*Video*/
+#filme{
+    height: 65vh;
+}
+ /*Página Fotos*/
+
+ .galeria{
+    width: 70vw;
+ }
+}
+
+
+
+
+
+
+
+
+@media (min-width: 1200px){
+
+/*PC*/
+
+.layout{
+    max-width: 1140px;
+}
+header{
+    height: 90px;
+}
+.logo img{
+    margin: 20px 0px 0px 10px;
+}
+.label_menu{
+    display: none;
+}
+nav ul{
+    position: static;
+    height: auto;
+    background: transparent;
+    margin-top: 30px;
+}
+nav ul li{
+    float: left;
+    border: 0;
+}
+nav ul li a{
+    color: #000000;
+    font-weight: bold;
+}
+nav ul li a:hover{
+    color: #ff0000;
+
+}
+.banner{
+    height: 45vh;
+}
+.banner-anime{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 350px;
+    margin: 0;
+}
+.anime1, .anime2{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.banner-anime img{
+    position: absolute;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: linear; /*ease, linear, ease-in, ease-out, aliviar-in-out, cubico-bizier*/
+}
+.anime1, .anime2:hover{
+    opacity: 1;
+}
+.anime1:hover, .anime2{
+    opacity: 0;
+}
+#usuario, #endereco, #mensagem, #pedido{
+    width: 900px;
+    margin: 0 auto;
+    margin-bottom: 90px;
+}
+}
+/*RODAPE*/
+
+.flex{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+}
+/*Video*/
+.radio-tv{
+    height: 100vh;
+    width: 150vw;
+    background: url(img/radio-tv.png) no-repeat;
+    margin: 5px auto;
+}
+#filme{
+    width: 35vw;
+    height: 50vh;
+    position: relative;
+    display: block;
+    margin-right: 530px;
+    margin-bottom: 300px;
+
+
+}
+ /*Página Fotos*/
+
+  .galeria{
+    width: 73vw;
+ }
+
+
+
+
+
+/*______________________________________________________________________*/
+/*Explicação flexbox*/
+
+.conteinerrr{
+
+    height: 500px;
+    background-color: #0b8140;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 5px;
+    justify-content: center;
+   /* flex-wrap: wrap;*/
+   align-items: center;
+    justify-content: center ;
+    --titulo: "Reem Kufi Fun", sans-serif;
+}
+
+
+.itensss{
+    width: 150px;
+    height: 50px;
+    background: #83e1ad;
+    border: 1px solid #000000 ;
+    font-size: 2em;
+    /*flex: auto;*/
+    flex-grow: 5 ;
+}
+
+.olá5ss{
+    flex-grow: 5;
+}
